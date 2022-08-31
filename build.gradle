@@ -1,0 +1,81 @@
+buildscript {
+    ext._hiltVersion = "2.42"
+    ext.kotlin_version = "1.6.10"
+
+
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.1.2'
+
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:${_hiltVersion}"
+    }
+
+
+    ext._coilVersion = "2.1.0"
+    ext._coil = "io.coil-kt:coil-compose:${_coilVersion}"
+
+    ext._dataStoreVersion = "1.0.0"
+    ext._dataStorePreferences = "androidx.datastore:datastore-preferences:${_dataStoreVersion}"
+    ext._dataStorePreferencesCore = "androidx.datastore:datastore-preferences-core:${_dataStoreVersion}"
+
+    ext._retrofitVersion = "2.9.0"
+    ext._retrofit = "com.squareup.retrofit2:retrofit:${_retrofitVersion}"
+    ext._retrofitMoshiConverter = "com.squareup.retrofit2:converter-moshi:${_retrofitVersion}"
+
+    ext._hiltAndroid = "com.google.dagger:hilt-android:${_hiltVersion}"
+    ext._hiltCompiler = "com.google.dagger:hilt-compiler:${_hiltVersion}"
+    ext._hiltAndroidTest = "com.google.dagger:hilt-android-testing:${_hiltVersion}"
+
+    ext._hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:${_hiltVersion}"
+
+    ext._composeNavigationVersion = "2.5.0-rc01"
+    ext._composeNavigation = "androidx.navigation:navigation-compose:${_composeNavigationVersion}"
+
+    ext._composeHiltNavigationVersion = "1.0.0"
+    ext._composeHiltNavigation = "androidx.hilt:hilt-navigation-compose:${_composeHiltNavigationVersion}"
+    ext._composeVersion = "1.2.0-alpha04"
+
+    ext._composeActivityVersion = "1.3.0-rc01"
+    ext._composeActivity = "androidx.activity:activity-compose:${_composeActivityVersion}"
+
+    ext._composeUi = "androidx.compose.ui:ui:${_composeVersion}"
+    ext._composeMaterial = "androidx.compose.material:material:${_composeVersion}"
+
+    ext._composeTooling = "androidx.compose.ui:ui-tooling:1.1.1"
+    ext._composeToolingPreview = "androidx.compose.ui:ui-tooling-preview:1.1.1"
+
+    ext._mockkVersion = "1.12.0"
+    ext._mockk = "io.mockk:mockk:${_mockkVersion}"
+
+    ext._mockitoCoreVersion = "4.4.0"
+    ext._mockitoCore = "org.mockito:mockito-core:${_mockitoCoreVersion}"
+    ext._mockitoCoreAndroid = "org.mockito:mockito-android:${_mockitoCoreVersion}"
+
+    ext._mockitoKotlinVersion = "3.2.0"
+
+    ext._mockkAndroid = "io.mockk:mockk-android:${_mockkVersion}"
+    ext._mockitoKotlin = "org.mockito.kotlin:mockito-kotlin:${_mockitoKotlinVersion}"
+    ext._mockitoInline = "org.mockito:mockito-inline:${_mockitoCoreVersion}"
+
+    ext._junitVersion = "4.13.2"
+    ext._junit = "junit:junit:${_junitVersion}"
+
+    ext._turbine = "app.cash.turbine:turbine:0.7.0"
+    ext._coroutinesTesting = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.2"
+}// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'com.android.application' version '7.2.1' apply false
+    id 'com.android.library' version '7.2.1' apply false
+    id 'org.jetbrains.kotlin.android' version '1.5.31' apply false
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
